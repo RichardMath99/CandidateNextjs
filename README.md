@@ -34,7 +34,7 @@ Certainly! You can add the following steps to your README to guide users through
 ### 1. Clone do Projeto
 
 ```bash
-$ git clone https://github.com/RichardMath99
+$ git clone https://github.com/RichardMath99/CandidateNextjs
 ```
 
 ### 2. Instalando as dependências
