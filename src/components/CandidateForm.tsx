@@ -6,7 +6,7 @@ import SkillsInput from './SkillsInput'
 import Input from './Input'
 import Button from './Button'
 
-import { FormProps, CandidateFormProps } from '../types/index'
+import { FormProps, CandidateFormProps, CandidateProps } from '../types/index'
 
 const CandidateForm = (props: CandidateFormProps) => {
   const [skills, setSkills] = useState([''])
@@ -15,9 +15,14 @@ const CandidateForm = (props: CandidateFormProps) => {
     register,
     handleSubmit,
     setValue,
+    reset,
     formState: { isValid },
   } = useForm<FormProps>({
     mode: 'onChange',
+    defaultValues: {
+      name: '',
+      skills: [''],
+    },
   })
 
   const onSubmit: SubmitHandler<FormProps> = async (data) => {
@@ -30,8 +35,7 @@ const CandidateForm = (props: CandidateFormProps) => {
         },
       )
       setSkills([''])
-      setValue('name', '')
-      setValue('skills', [''])
+      reset()
       props.onSubmitSuccess()
     } catch (error) {
       console.error(error)
@@ -39,7 +43,7 @@ const CandidateForm = (props: CandidateFormProps) => {
   }
 
   const handleSkillChange = (index: number, value: string) => {
-    const newSkills: string[] = [...skills]
+    const newSkills = [...skills]
     newSkills[index] = value
     setSkills(newSkills)
     setValue('skills', newSkills)
@@ -50,7 +54,7 @@ const CandidateForm = (props: CandidateFormProps) => {
   }
 
   const handleRemoveSkill = (index: number) => {
-    const newSkills: string[] = [...skills]
+    const newSkills = [...skills]
     newSkills.splice(index, 1)
     setSkills(newSkills)
     setValue('skills', newSkills)
@@ -63,6 +67,7 @@ const CandidateForm = (props: CandidateFormProps) => {
         <em className="required-mark">*</em>
       </label>
       <Input
+        onChange={(e) => setValue('name', e.target.value)}
         name="name"
         placeholder="Digite o nome do candidato"
         register={register}
