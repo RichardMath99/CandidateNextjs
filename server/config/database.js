@@ -1,7 +1,11 @@
+import dotenv from 'dotenv'
+
+dotenv.config()
+
 export const dbConfig = {
-  dialect: 'mysql',
-  host: '127.0.0.1',
-  user: 'docker',
-  password: 'docker',
-  database: 'dbCandidates',
+  dialect: process.env.MYSQL_DIALECT,
+  host: process.env.MYSQL_HOST,
+  user: process.env.MYSQL_USER,
+  password: process.env.MYSQL_PASSWORD,
+  database: process.env.MYSQL_DATABASE,
 }

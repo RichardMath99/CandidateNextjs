@@ -6,7 +6,7 @@ describe('Página Cadastro do candidato', () => {
   it('Deve renderizar a página de cadastro', async () => {
     const { getByText } = render(<Register />)
 
-    expect(getByText('Cadastro de Candidatos')).toBeInTheDocument()
+    expect(getByText('Cadastro')).toBeInTheDocument()
   })
 
   it('Deve realizar o teste de cadastro', async () => {

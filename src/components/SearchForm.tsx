@@ -32,7 +32,7 @@ const SearchForm = () => {
         },
       )
 
-      setSearchResult(response.data.bestCandidate)
+      setSearchResult(response.data.candidate)
       setSearchNoResults(false)
     } catch (error) {
       setSearchResult(null)
