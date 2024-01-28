@@ -10,12 +10,16 @@
 
 ## 🛠️ Tecnologias
 
-💻 **Front-end** 
+⚡️ **Stack**
 - [Next.js 14.0.0](https://nextjs.org)
 - [Typescript](https://www.typescriptlang.org)
+- [Node.js 20.11.0](https://nextjs.org)
+- [ESLint](https://eslint.org)
+- [Prettier](https://prettier.io)
 
 📚 **Bibliotecas**
 - [yup](https://www.npmjs.com/package/yup)
+- [mysql2](https://www.npmjs.com/package/mysql2)
 - [react-hook-form](https://react-hook-form.com/)
 - [react-icons](https://react-icons.github.io/react-icons/)
 
