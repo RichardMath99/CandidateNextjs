@@ -1,12 +1,12 @@
 ## Layout web
 
-![Página de Cadastro](./public/assets/images/register-page.png) 
-![Página de Busca](./public/assets/images/search-page.png) 
+![Página de Cadastro](./public/assets/images/register-page.png?v=1.0)) 
+![Página de Busca](./public/assets/images/search-page.png?v=1.0)) 
 
 
 ## Layout mobile
-![Página de Cadastro Mobile](./public/assets/images/register-page-mobile.png) 
-![Página de Busca Mobile](./public/assets/images/search-page-mobile.png) 
+![Página de Cadastro Mobile](./public/assets/images/register-page-mobile.png?v=1.0) 
+![Página de Busca Mobile](./public/assets/images/search-page-mobile.png?v=1.0)) 
 
 ## 🛠️ Tecnologias
 
