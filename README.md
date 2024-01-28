@@ -10,8 +10,8 @@
 
 ## 🛠️ Tecnologias
 
-💻 **Front-end**
-- [Next.js 14.0.1](https://nextjs.org)
+💻 **Front-end** 
+- [Next.js 14.0.0](https://nextjs.org)
 - [Typescript](https://www.typescriptlang.org)
 
 📚 **Bibliotecas**
