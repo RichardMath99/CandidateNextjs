@@ -3,7 +3,6 @@ import { FaPlus, FaMinus } from 'react-icons/fa'
 import Input from './Input'
 import { SkillsInputProps } from '../types/index'
 
-
 const SkillsInput = (props: SkillsInputProps) => {
   const handleSkillChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     props.onChange(e.target.value)

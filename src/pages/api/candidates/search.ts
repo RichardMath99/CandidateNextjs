@@ -2,9 +2,15 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import { object, string } from 'yup'
 import mysql from 'mysql2/promise'
 import { dbConfig } from '../../../../server/config/database'
-import { CandidateProps } from '../../../types/index'
+// import { CandidateProps } from '../../../types/index'
 
 const pool = mysql.createPool(dbConfig)
+
+interface CandidateProps extends mysql.RowDataPacket {
+  id: string
+  name: string
+  skills: string[]
+}
 
 export default async function handler(
   req: NextApiRequest,
@@ -23,7 +29,7 @@ export default async function handler(
   }
 
   const skills: string = (req.query.skills as string) || ''
-  const arraySkills = skills.toLowerCase().replace(/\s/g, '').split(',')
+  const arraySkills = skills.toLowerCase().replace(/\s/g, '').split(', ')
 
   const conditionals = arraySkills
     .map((skill) => `JSON_SEARCH(skills, 'one', '${skill}') IS NOT NULL`)
@@ -33,21 +39,23 @@ export default async function handler(
 
   try {
     const connection = await pool.getConnection()
-    const [result] = await connection.query(query)
+    const [result] = await connection.query<CandidateProps[]>(query)
 
     let bestCandidate: CandidateProps | null = null
     let qtdSkillsBestCandidate: number | 0 = 0
-    result.forEach((candidate: CandidateProps) => {
-      const candidateSkills = candidate.skills || []
-      const commonSkills = candidateSkills.filter((item) =>
-        arraySkills.includes(item),
-      )
+    if (Array.isArray(result) && result.length > 0) {
+      result.forEach((candidate) => {
+        const candidateSkills = candidate.skills || []
+        const commonSkills = candidateSkills.filter((item) =>
+          arraySkills.includes(item),
+        )
 
-      if (commonSkills.length >= qtdSkillsBestCandidate) {
-        qtdSkillsBestCandidate = commonSkills.length
-        bestCandidate = candidate
-      }
-    })
+        if (commonSkills.length >= qtdSkillsBestCandidate) {
+          qtdSkillsBestCandidate = commonSkills.length
+          bestCandidate = candidate
+        }
+      })
+    }
 
     if (!bestCandidate) {
       return res.status(404).json({

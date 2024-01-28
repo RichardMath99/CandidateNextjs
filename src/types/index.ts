@@ -1,6 +1,6 @@
 export interface FormProps {
   name: string
-  skills: string
+  skills: string[]
 }
 
 export interface CandidateProps {
