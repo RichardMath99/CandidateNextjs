@@ -27,7 +27,7 @@ const Register = () => {
         height={150}
         className="catho-logo"
       />
-      <h1>Cadastro de Candidatos</h1>
+      <h1>Cadastro</h1>
       <CandidateForm onSubmitSuccess={handleFormSubmitSuccess} />
       {showModal && <Modal onClose={handleModalClose} />}
     </article>

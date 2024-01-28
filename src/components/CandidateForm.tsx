@@ -27,11 +27,13 @@ const CandidateForm = (props: CandidateFormProps) => {
 
   const onSubmit: SubmitHandler<FormProps> = async (data) => {
     try {
+      const formattedSkills: string[] = data.skills.map((skill) => skill.trim())
+
       const response = await axios.post(
         'http://localhost:3000/api/candidates',
         {
           name: data.name,
-          skills: data.skills,
+          skills: formattedSkills,
         },
       )
       setSkills([''])
