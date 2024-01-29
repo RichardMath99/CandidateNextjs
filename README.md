@@ -54,6 +54,10 @@ $ docker-compose up -d
 Execute o seguinte comando para criar o banco de dados:
 
 ```bash
+$ cp env.example .env
+```
+
+```bash
 $ node server/database/index.js
 ```
 
