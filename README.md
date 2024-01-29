@@ -35,6 +35,10 @@
 $ git clone https://github.com/RichardMath99/CandidateNextjs
 ```
 
+```bash
+$ cd CandidateNextjs
+```
+
 ### 2. Instalando as dependências
 
 ```bash
