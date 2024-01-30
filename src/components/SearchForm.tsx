@@ -64,22 +64,20 @@ const SearchForm = () => {
           <em className="required-mark">*</em>
         </label>
         <div className="box-skills">
-          <div className="box-skills">
-            {skills.map((skill: string, index: number) => (
-              <SkillsInput
-                key={index}
-                skill={skill}
-                onChange={(value) => handleSkillChange(index, value)}
-                onAdd={handleAddSkill}
-                onRemove={() => handleRemoveSkill(index)}
-                isFirst={index === 0}
-                isLast={index === skills.length - 1}
-                register={register}
-                index={index}
-                totalSkills={skills.length}
-              />
-            ))}
-          </div>
+          {skills.map((skill: string, index: number) => (
+            <SkillsInput
+              key={index}
+              skill={skill}
+              onChange={(value) => handleSkillChange(index, value)}
+              onAdd={handleAddSkill}
+              onRemove={() => handleRemoveSkill(index)}
+              isFirst={index === 0}
+              isLast={index === skills.length - 1}
+              register={register}
+              index={index}
+              totalSkills={skills.length}
+            />
+          ))}
         </div>
         <div className="container-btn">
           <Button text="Buscar" disabled={!isValid} />
