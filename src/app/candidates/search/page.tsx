@@ -2,8 +2,8 @@
 import React from 'react'
 import Image from 'next/image'
 import cathoLogo from '../../../../public/assets/images/logo_catho.svg'
-import SearchForm from '../../../components/SearchForm'
-import Title from '../../../components/Title'
+import SearchForm from '@/components/SearchForm'
+import Title from '@/components/Title'
 
 const Search = () => {
   return (
