@@ -4,9 +4,9 @@ import Image from 'next/image'
 
 import cathoLogo from '../../../../public/assets/images/logo_catho.svg'
 
-import CandidateForm from '../../../components/CandidateForm'
-import Modal from '../../../components/Modal'
-import Title from '../../../components/Title'
+import CandidateForm from '@/components/CandidateForm'
+import Modal from '@/components/Modal'
+import Title from '@/components/Title'
 
 const Register = () => {
   const [showModal, setShowModal] = useState(false)
