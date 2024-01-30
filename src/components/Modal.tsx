@@ -1,5 +1,5 @@
 import React from 'react'
-import { ModalProps } from '../types/index'
+import { ModalProps } from '@/types'
 
 const Modal = (props: ModalProps) => {
   return (

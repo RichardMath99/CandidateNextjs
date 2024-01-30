@@ -1,5 +1,5 @@
 import React from 'react'
-import { CandidateProps } from '../types/index'
+import { CandidateProps } from '@/types'
 
 const Result = (props: CandidateProps) => {
   return (

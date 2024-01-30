@@ -1,7 +1,9 @@
 import React from 'react'
 import { FaPlus, FaMinus } from 'react-icons/fa'
-import Input from './Input'
-import { SkillsInputProps } from '../types/index'
+
+import Input from '@/components/Input'
+
+import { SkillsInputProps } from '@/types'
 
 const SkillsInput = (props: SkillsInputProps) => {
   const handleSkillChange = (e: React.ChangeEvent<HTMLInputElement>) => {

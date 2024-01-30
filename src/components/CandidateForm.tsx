@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
-import axios from 'axios'
 import { useForm, SubmitHandler } from 'react-hook-form'
 
-import SkillsInput from './SkillsInput'
-import Input from './Input'
-import Button from './Button'
+import SkillsInput from '@/components/SkillsInput'
+import Input from '@/components/Input'
+import Button from '@/components/Button'
 
-import { FormProps, CandidateFormProps, CandidateProps } from '../types/index'
+import api from '@/services/api'
+
+import { FormProps, CandidateFormProps } from '@/types'
 
 const CandidateForm = (props: CandidateFormProps) => {
   const [skills, setSkills] = useState([''])
@@ -29,13 +30,10 @@ const CandidateForm = (props: CandidateFormProps) => {
     try {
       const formattedSkills: string[] = data.skills.map((skill) => skill.trim())
 
-      const response = await axios.post(
-        'http://localhost:3000/api/candidates',
-        {
-          name: data.name,
-          skills: formattedSkills,
-        },
-      )
+      const response = await api.post('/api/candidates', {
+        name: data.name,
+        skills: formattedSkills,
+      })
       setSkills([''])
       reset()
       props.onSubmitSuccess()

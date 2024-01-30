@@ -1,5 +1,5 @@
 import React, { ChangeEvent } from 'react'
-import { InputProps } from '../types/index'
+import { InputProps } from '@/types'
 
 const Input = ({
   name,
