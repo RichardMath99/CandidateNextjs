@@ -32,25 +32,30 @@
 ### 1. Clone do Projeto
 
 ```bash
-$ git clone https://github.com/RichardMath99/CandidateNextjs
+git clone https://github.com/RichardMath99/CandidateNextjs
 ```
 
 ```bash
-$ cd CandidateNextjs
+cd CandidateNextjs
 ```
 
 ### 2. Instalando as dependências
 
 ```bash
-$ npm install
+npm install
 ```
 
 ### 3. Configurando o Banco de Dados com Docker
 
 Certifique-se de ter o Docker instalado em sua máquina. Execute o seguinte comando para subir o banco de dados MySQL em um contêiner Docker:
 
+
 ```bash
-$ docker-compose up -d
+cp env.example .env
+```
+
+```bash
+docker-compose up -d
 ```
 
 ### 4. Criando o Banco de Dados
@@ -58,11 +63,7 @@ $ docker-compose up -d
 Execute o seguinte comando para criar o banco de dados:
 
 ```bash
-$ cp env.example .env
-```
-
-```bash
-$ node server/database/index.js
+node server/database/index.js
 ```
 
 Isso completa a configuração e instalação do projeto. Agora você está pronto para iniciar o projeto:
@@ -70,7 +71,7 @@ Isso completa a configuração e instalação do projeto. Agora você está pron
 ### 5. Iniciando o Projeto
 
 ```bash
-$ npm run dev
+npm run dev
 ```
 
 O projeto estará acessível em [http://localhost:3000](http://localhost:3000).
