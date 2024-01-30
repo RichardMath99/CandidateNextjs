@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
-import axios from 'axios'
 import { useForm, SubmitHandler } from 'react-hook-form'
 
-import SkillsInput from './SkillsInput'
-import NoResult from './NoResults'
-import Result from './Result'
-import Button from './Button'
+import SkillsInput from '@/components/SkillsInput'
+import NoResult from '@/components/NoResults'
+import Result from '@/components/Result'
+import Button from '@/components/Button'
 
-import { FormProps, CandidateProps } from '../types/index'
+import api from '@/services/api'
+
+import { FormProps, CandidateProps } from '@/types'
 
 const SearchForm = () => {
   const [skills, setSkills] = useState([''])
@@ -25,13 +26,9 @@ const SearchForm = () => {
 
   const onSubmit: SubmitHandler<FormProps> = async (data) => {
     try {
-      const response = await axios.get(
-        'http://localhost:3000/api/candidates/search',
-        {
-          params: { skills: data.skills.join(',') },
-        },
-      )
-
+      const response = await api.get('/api/candidates/search', {
+        params: { skills: data.skills.join(',') },
+      })
       setSearchResult(response.data.candidate)
       setSearchNoResults(false)
     } catch (error) {

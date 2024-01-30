@@ -41,3 +41,7 @@ export interface ButtonProps {
   disabled: boolean
   text: string
 }
+
+export interface TitleProps {
+  text: string
+}
