@@ -11,7 +11,7 @@
 ## 🛠️ Tecnologias
 
 ⚡️ **Stack e Bibliotecas**
-- [Next.js 14.0.0](https://nextjs.org)
+- [Next.js 14.0.1](https://nextjs.org)
 - [Typescript](https://www.typescriptlang.org)
 - [Node.js 20.11.0](https://nextjs.org)
 - [ESLint](https://eslint.org)
